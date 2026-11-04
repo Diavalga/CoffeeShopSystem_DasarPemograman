@@ -22,15 +22,15 @@ bool passwordCheck() {
 }
 
 void adminMenu() {
-        cout << "[ Menu Admin ]" << endl;
-    cout << "==================" << endl;
-    cout << "1. Lihat Stok" << endl;
-    cout << "2. Tambah Stok" << endl;
-    cout << "3. Hapus Stok" << endl;
-    cout << "0. Kembali" << endl;
-    cout << "Anda : ";
     int pilihan;
     do {
+        cout << "[ Menu Admin ]" << endl;
+        cout << "==================" << endl;
+        cout << "1. Lihat Stok" << endl;
+        cout << "2. Tambah Stok" << endl;
+        cout << "3. Hapus Stok" << endl;
+        cout << "0. Kembali" << endl;
+        cout << "Anda : ";
         cin >> pilihan;
 
         switch (pilihan) {

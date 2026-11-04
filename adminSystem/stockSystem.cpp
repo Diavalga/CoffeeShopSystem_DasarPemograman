@@ -53,9 +53,8 @@ void simpanData() {
     file.close();
 }
 
-//ini buat liat stock
-void viewStock() {
-    bacaData();
+//ini buat nampilin stock ke layar
+void tampilStok() {
     cout << "[ Stok Barang ]" << endl;
     cout << "==================" << endl;
 
@@ -66,17 +65,27 @@ void viewStock() {
     for (int i = 0; i < banyak; i++) {
         cout << i + 1 << ". " << nama[i] << ", Jumlah: " << jumlah[i] << endl;
     }
+    cout << "\n";
+}
+
+//ini buat liat stock
+void viewStock() {
+    bacaData();
+    tampilStok();
+
     string keluar;
     do {
         cout << "[0.Keluar] : ";
         cin >> keluar;
+        cout << endl;
     } while (keluar != "0");
 }
+
 
 //ini buat input stock baru
 void inputStock() {
     bacaData();
-
+    tampilStok();
     string namaBaru;
     int tambah;
     cout << "Masukkan nama item : ";
@@ -93,7 +102,7 @@ void inputStock() {
         nama[banyak] = namaBaru;
         jumlah[banyak] = tambah;
         banyak++;
-        cout << "Item baru ditambahkan!" << endl;
+        cout << "Item baru ditambahkan!\n" << endl;
     }
     simpanData();
 }
@@ -101,7 +110,7 @@ void inputStock() {
 //ini buat hapus stock
 void deleteStock() {
     bacaData();
-
+    tampilStok();
     string hapus;
     cout << "Masukkan nama item yang ingin dihapus : ";
     cin.ignore();
@@ -109,7 +118,7 @@ void deleteStock() {
 
     int posisi = cariItem(hapus);
     if (posisi == -1) {
-        cout << "Item tidak ditemukan." << endl;
+        cout << "Item tidak ditemukan.\n" << endl;
         return;
     }
 
@@ -120,5 +129,5 @@ void deleteStock() {
     }
     banyak--;
     simpanData();
-    cout << "Item berhasil dihapus!" << endl;
+    cout << "Item berhasil dihapus!\n" << endl;
 }
